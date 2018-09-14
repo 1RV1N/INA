@@ -28,4 +28,5 @@ tl.to(".box",0.5,{
 .from(".circle", 1, {
 		opacity: 0,
 		left:200
-});;
+});
+
