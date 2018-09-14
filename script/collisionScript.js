@@ -2,6 +2,13 @@
 var non = "ca touche pas";
 var oui = "Oui ca touche aussi"
 
+var tl = new TimelineLite;
+
+tl.to("#div1",1,{
+  x:600,
+  ease: Power1.easeIn
+});
+
 function collision($div1, $div2) {
       var x1 = $div1.offset().left;
       var y1 = $div1.offset().top;
@@ -24,31 +31,26 @@ function collision($div1, $div2) {
         
       if (b1 < y2 || y1 > b2 || r1 < x2 || x1 > r2) return false ;
       return true ;
-    }
+}
+
+function destruct($idDiv,$div){
+
+  var rl = new TimelineLite;
+
+  rl.to($idDiv,0.1,{
+    scale:0.4,
+    display:"none",
+  });
+
+}
 
 
 window.setInterval(function() {
+
     $('#result').text(collision($('#div1'), $('#div2')));
+
     if (collision($('#div1'), $('#div2'))==true){
-      document.getElementById("div1").style.color = "blue";
-    }else{
-      document.getElementById("div1").style.color = "black";
-    };
+      destruct('#div2','div2');
+    }
 
 }, 200);
-
-
-var tl = new TimelineLite;
-
-tl.to("#div1",5,{
-  x:600,
-  y:34,
-  borderRadius:20,
-  ease: Power1.easeIn
-})
-.to("#div1",2,{
-  x:600,
-  y:34,
-  borderRadius:60,
-  ease: Power2.ease
-});
