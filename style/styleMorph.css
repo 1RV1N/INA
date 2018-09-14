@@ -1,0 +1,15 @@
+@keyframes BackgroundGradient {
+	0%{}
+	50%{background-image:url("floor5.svg");}
+	100%{background-image:url("floor5.svg");}
+}
+#Calque_1{
+	height:500px;
+}
+#expression1{
+	opacity:0;
+}
+#expression2{
+	opacity:1;
+	position: relative;
+}
