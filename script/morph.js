@@ -67,7 +67,7 @@ var tl = new TimelineLite;
 
 tl.to("#expression2",0.01,{
 	opacity:0,
-	delay:3
+	delay:1
 })
 .to("#expression1",0.01,{
 	opacity:1,
