@@ -1,13 +1,4 @@
-
-var non = "ca touche pas";
-var oui = "Oui ca touche aussi"
-
 var tl = new TimelineLite;
-
-tl.to("#div1",1,{
-  x:600,
-  ease: Power1.easeIn
-});
 
 function collision($div1, $div2) {
       var x1 = $div1.offset().left;
@@ -47,7 +38,7 @@ function destruct($idDiv,$div){
 
 window.setInterval(function() {
 
-    $('#result').text(collision($('#div1'), $('#div2')));
+    
 
     if (collision($('#div1'), $('#div2'))==true){
       destruct('#div2','div2');
