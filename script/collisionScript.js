@@ -38,7 +38,7 @@ function destruct($idDiv,$div){
 
 window.setInterval(function() {
 
-    
+    // $('#result').text(collision($('#div1'), $('#div2')));
 
     if (collision($('#div1'), $('#div2'))==true){
       destruct('#div2','div2');
