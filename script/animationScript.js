@@ -8,7 +8,6 @@ document.addEventListener('keydown',function(e){
 
 		if (touche==0 || touche != keyPress){
 			touche=keyPress;
-			animation=false;
 		}
 		if (touche > 0 && touche==68){
 			animation=true;
@@ -37,11 +36,7 @@ document.addEventListener('keydown',function(e){
 			tl.to("#div1",0.5,{
 				backgroundColor:'blue',
 			});
-		}else if(keyPress == 83){
-			alert ('valeur rnd = ' + rnd)
 		}else{
-			//alert ('touche :' + keyPress)
-			
 			//alert ('animation :' + animation)
 			if(keyPress ==  65 && animation==true){
 				tl.to("#div1",0.5,{
@@ -52,15 +47,23 @@ document.addEventListener('keydown',function(e){
 
 		}
 
-		while(rnd ==1 ){
-				
-				if(touche ==  65){
-					tl.to("#div1",0.5,{
-			  			backgroundColor:'blue',
-					});
-				}
-				rnd++;
+		while(rnd ==1 ){		
+			if(touche ==  65){
+				tl.to("#div1",0.5,{
+		  			backgroundColor:'blue',
+				});
 			}
+			rnd++;
+		}
+
+		// if(touche ==  65){
+		// 	while(rnd ==1 ){	
+		// 		tl.to("#div1",0.5,{
+		//   			backgroundColor:'blue',
+		// 		});
+		// 	rnd++;
+		// 	}
+		// }
 		
 $('#result').text('animation = '+ animation +' | keyPress = '+ keyPress + ' | rnd = ' + rnd) ;
 
