@@ -33,19 +33,20 @@ document.addEventListener('keydown',function(e){
 				tl.to("#div1",0.5,{
 					backgroundColor:'blue',
 				});
-
 			}else if(keyPress == 81){
 				tl.to("#div1",0.5,{
 					left:"-=500",
 			  		ease: Power1.easeIn
 				});
+			}else if(keyPress == 83){
+				tl.to("#div1",1,{
+					left:"-=200",
+				});
 			}
 
-			$('#result').text('animation = '+ animation +' | keyPress = '+ keyPress + ' | rnd = ' + rnd) ;
-
+			$('#result').text('animation = '+ animation +' | keyPress = '+ keyPress + ' | rnd = ' + rnd + ' | dernière touche appuyé =  '+ derniereAction) ;
 		}else{
 			derniereAction = keyPress;
 
 		}
-		
 });
