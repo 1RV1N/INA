@@ -9,6 +9,7 @@ document.addEventListener('keydown',function(e){
 		}*/
 
 		const keyPress = event.keyCode;
+		const lastKeypress = 0;
 		var rnd = 0;
 		var animation=false;
 
@@ -28,7 +29,7 @@ document.addEventListener('keydown',function(e){
 			  		left:"+=500",
 			  		ease: Power1.easeIn
 				});
-			
+				lastKeypress==keyPress;
 			}else if(keyPress == 90){
 				tl.to("#div1",0.5,{
 					backgroundColor:'blue',
