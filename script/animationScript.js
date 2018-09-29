@@ -1,7 +1,7 @@
 var touche=0;
 var actionEnCour=0;
 var premiereAction = 0;
-var derniereAction = 0;
+var lastKeypress = 0;
 
 document.addEventListener('keydown',function(e){
 		/*if(tl.progress() == 1){
@@ -9,7 +9,6 @@ document.addEventListener('keydown',function(e){
 		}*/
 
 		const keyPress = event.keyCode;
-		const lastKeypress = 0;
 		var rnd = 0;
 		var animation=false;
 
@@ -20,8 +19,9 @@ document.addEventListener('keydown',function(e){
 			animation=true;
 		}
 
-		if(premiereAction == 0 || tl.progress() >= 0.99){
+		if(premiereAction == 0 || tl.progress() >= 1){
 			premiereAction = 1;
+			lastKeypress = keyPress;
 
 			if (keyPress == 68){
 				rnd  = 1;
@@ -29,7 +29,6 @@ document.addEventListener('keydown',function(e){
 			  		left:"+=500",
 			  		ease: Power1.easeIn
 				});
-				lastKeypress==keyPress;
 			}else if(keyPress == 90){
 				tl.to("#div1",0.5,{
 					backgroundColor:'blue',
@@ -45,9 +44,24 @@ document.addEventListener('keydown',function(e){
 				});
 			}
 
-			$('#result').text('animation = '+ animation +' | keyPress = '+ keyPress + ' | rnd = ' + rnd + ' | dernière touche appuyé =  '+ derniereAction) ;
-		}else{
-			derniereAction = keyPress;
+			$('#result').text('animation = '+ animation +' | keyPress = '+ keyPress + ' | rnd = ' + rnd + ' | dernière touche appuyé =  '+ lastKeypress+' | premiereAction = '+premiereAction) ;
 
+		}else{
+
+			if(keyPress == 83  ){
+				tl.to("#div1",0.5,{
+					backgroundColor:'red',
+				});
+			}else if(keyPress == 90 && lastKeypress == 68  ){
+				tl.to("#div1",0.1,{
+					top:"+=100",
+			  		ease: Power1.easeIn
+				}).to("#div1",0.1,{
+					top:"-=100",
+			  		ease: Power1.easeIn
+			  	});
+			}
+
+			$('#result2').text('lastKeypress = '+ lastKeypress+' | premiereAction = '+premiereAction ) ;
 		}
 });
