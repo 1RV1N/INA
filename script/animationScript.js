@@ -44,15 +44,17 @@ document.addEventListener('keydown',function(e){
 				});
 			}
 
-			$('#result').text('animation = '+ animation +' | keyPress = '+ keyPress + ' | rnd = ' + rnd + ' | dernière touche appuyé =  '+ lastKeypress+' | premiereAction = '+premiereAction) ;
+
+			document.getElementById('result').innerText=`animation = ${animation} | keyPress = ${keyPress} | rnd = ${rnd} | dernière touche appuyé = ${lastKeypress} | premiereAction = ${premiereAction}` ;
+
 
 		}else{
 
-			if(keyPress == 83  ){
+			if(keyPress == 90  ){
 				tl.to("#div1",0.5,{
 					backgroundColor:'red',
 				});
-			}else if(keyPress == 90 && lastKeypress == 68  ){
+			}else if(keyPress == 83 && lastKeypress == 68  ){
 				tl.to("#div1",0.1,{
 					top:"+=100",
 			  		ease: Power1.easeIn

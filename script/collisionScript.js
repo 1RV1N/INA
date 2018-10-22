@@ -10,7 +10,6 @@ function collision($div1, $div2) {
       
       var r1 = x1 + w1;
       
-      
       var x2 = $div2.offset().left;
       var y2 = $div2.offset().top;
       var h2 = $div2.outerHeight(true);
@@ -24,7 +23,7 @@ function collision($div1, $div2) {
       return true ;
 }
 
-function destruct($idDiv,$div){
+function destruct($idDiv){
 
   var rl = new TimelineLite;
 
@@ -34,6 +33,27 @@ function destruct($idDiv,$div){
   });
 
 }
+function stun($idDiv){
+
+  var sl = new TimelineLite;
+
+  sl.to($idDiv,0.1,{
+    left:'+=50',
+    ease: Power1.easeIn
+  });
+
+}
+function eject($idDiv){
+
+  var il = new TimelineLite;
+
+  il.to($idDiv,0.1,{
+    left:'+=50',
+  }).to($idDiv,0.1,{
+    left:'+=1050',
+    ease: Power1.easeIn
+  });
+}
 
 
 window.setInterval(function() {
@@ -41,7 +61,8 @@ window.setInterval(function() {
     // $('#result').text(collision($('#div1'), $('#div2')));
 
     if (collision($('#div1'), $('#div2'))==true){
-      destruct('#div2','div2');
+      destruct('#div2');
     }
+
 
 }, 200);
