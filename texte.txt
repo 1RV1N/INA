@@ -1,0 +1,18 @@
+Création de tableaux
+	objet : Platforme X3
+		sol constant
+		support destructible
+		shop
+		inn
+		quest
+		
+creation d'animation cinématiques
+creation dialogues
+creation de perso
+creation d'ennemies
+creation d'objet, armes, armures
+
+ordre des tableaux
+placement cinématiques/dialogues
+
+
